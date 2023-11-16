@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:shopping_list/menu.dart';
+import 'package:shopping_list/screens/menu.dart';
 // Import the ShopFormPage page here
-import 'package:shopping_list/shoppinglist_form.dart'; // Replace with the correct import path
+import 'package:shopping_list/screens/shoppinglist_form.dart'; // Replace with the correct import path
+import 'package:shopping_list/screens/list_products.dart';
 
 class LeftDrawer extends StatelessWidget {
   const LeftDrawer({Key? key});
@@ -65,9 +66,19 @@ class LeftDrawer extends StatelessWidget {
               );
             },
           ),
+          ListTile(
+            leading: const Icon(Icons.shopping_basket),
+            title: const Text('Product List'),
+            onTap: () {
+              // Route menu to product page
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const ProductPage()),
+              );
+            },
+          ),
         ],
       ),
     );
   }
 }
-
